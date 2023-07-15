@@ -1,14 +1,14 @@
 
 -- documentation can be found here https://github.com/hrsh7th/nvim-cmp 
 
-local ok, cmp = pcall(require, "cmp")
-if not ok then
+local cmp_ok, cmp = pcall(require, "cmp")
+if not cmp_ok then
     vim.notify("could not load plugin cmp")
     return
 end
 
-local ok, luasnip = pcall(require, "luasnip")
-if not ok then
+local luasnip_ok, luasnip = pcall(require, "luasnip")
+if not luasnip_ok then
     vim.notify("could not load plugin luasnip")
 end
 
@@ -111,6 +111,7 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },

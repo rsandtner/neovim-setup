@@ -46,10 +46,17 @@ return packer.startup(function(use)
 --  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- plugins needed to make autocompletion work
-  use "hrsh7th/nvim-cmp"             -- The completion plugin
-  use "L3MON4D3/LuaSnip"             -- snippet engine
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use("hrsh7th/nvim-cmp")             -- The completion plugin
+
+  -- cmp sources
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-nvim-lsp")
+
+  -- snippets
+  use("L3MON4D3/LuaSnip")             -- snippet engine
+  use("saadparwaiz1/cmp_luasnip")     -- snippet completions
+  use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
   -- lazy loading plugins sample (see: https://github.com/wbthomason/packer.nvim#quickstart)
   -- use {
@@ -57,7 +64,12 @@ return packer.startup(function(use)
   --   opt = true,                                      -- makes it lazy loaded
   --   cmd = { "Dispatch", "Make", "Focus", "Start" }   -- loaded on these commands
   -- }
- 
+
+  -- LSP configuration
+  use("williamboman/mason.nvim")             -- manage & install lsp servers
+  use("williamboman/mason-lspconfig.nvim")
+  use("neovim/nvim-lspconfig")               -- configure lsp servers
+
 
   -- are these plugins still needed? 
 --  use "nvim-lua/popup.nvim"     -- An implementation of the Popup API from vim in Neovim
