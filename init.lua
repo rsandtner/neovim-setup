@@ -7,3 +7,4 @@ require("rsandtner.core.colorscheme")
 require("rsandtner.plugins.cmp")
 require("rsandtner.plugins.lsp")
 
+require("rsandtner.plugins.telescope")

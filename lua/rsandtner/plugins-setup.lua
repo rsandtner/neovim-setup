@@ -70,10 +70,12 @@ return packer.startup(function(use)
   use("williamboman/mason-lspconfig.nvim")
   use("neovim/nvim-lspconfig")               -- configure lsp servers
 
+  -- Telescope
+  use("nvim-telescope/telescope.nvim")
+  use "nvim-lua/plenary.nvim"   -- Useful lua functions used by lots of plugins
 
   -- are these plugins still needed? 
 --  use "nvim-lua/popup.nvim"     -- An implementation of the Popup API from vim in Neovim
---  use "nvim-lua/plenary.nvim"   -- Useful lua functions used by lots of plugins
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

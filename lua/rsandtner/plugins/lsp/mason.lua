@@ -12,6 +12,9 @@ end
 
 local servers = {
     "lua_ls",
+    "gopls",
+    "jsonls",
+    "tsserver",
 }
 
 local settings = {

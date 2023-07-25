@@ -1,11 +1,12 @@
 local M = {}
 
 local function highlight_document(client)
+
   -- Set autocommands conditional on server_capabilities
   if client.server_capabilities.documentHighlight then
     vim.api.nvim_exec(
       [[
-      augroup lsp_document_highlight
+      augroup highlight_document
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
@@ -41,10 +42,8 @@ local function keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-
     keymaps(bufnr)
-    highlight_document(bufnr)
-
+    highlight_document(client)
 end
 
 M.capabilities = require("cmp_nvim_lsp").default_capabilities()
